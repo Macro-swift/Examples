@@ -13,9 +13,14 @@ This repository contains examples for
 
 ### Running Examples as Scripts
 
-Single file examples can be run as scripts using the
-[swift-sh](https://github.com/mxcl/swift-sh),
+Single file examples can be run as scripts using [swift-sh](https://github.com/mxcl/swift-sh),
 which can be installed using a simple `brew install swift-sh`.
+
+Example:
+```
+$ Sources/httpd-helloworld/main.swift
+2020-01-07T17:14:35+0100 notice: Server listening on http://localhost:1337/
+```
 
 ### Who
 
