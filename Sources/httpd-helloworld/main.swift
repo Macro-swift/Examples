@@ -1,7 +1,5 @@
 #!/usr/bin/swift sh
 
-// httpd-helloworld - the most basic HTTP server
-
 import Macro // @Macro-swift ~> 0.0.2
 
 http.createServer { req, res in
