@@ -1,6 +1,6 @@
 #!/usr/bin/swift sh
 
-import Macro // @Macro-swift ~> 0.0.2
+import Macro // @Macro-swift ~> 0.0.12
 
 http.createServer { req, res in
     // log request
