@@ -1,7 +1,7 @@
 #!/usr/bin/swift sh
 
 import Foundation
-import MacroExpress // @Macro-swift ~> 0.0.2
+import MacroExpress // @Macro-swift ~> 0.0.3
 
 let dirname = __dirname()
 

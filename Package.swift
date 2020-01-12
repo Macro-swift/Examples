@@ -12,18 +12,22 @@ let package = Package(
   
   products: [
     .executable(name: "httpd-helloworld", targets: [ "httpd-helloworld" ]),
-    .executable(name: "connect-static",   targets: [ "connect-static"   ])
+    .executable(name: "connect-static",   targets: [ "connect-static"   ]),
+    .executable(name: "express-simple",   targets: [ "express-simple"   ])
   ],
   
   dependencies: [
     .package(url: "https://github.com/Macro-swift/Macro.git",
              from: "0.0.16"),
     .package(url: "https://github.com/Macro-swift/MacroExpress.git",
-             from: "0.0.3")
+             from: "0.0.3"),
+    .package(url: "https://github.com/AlwaysRightInstitute/cows",
+             from: "1.0.0")
   ],
   
   targets: [
     .target(name: "httpd-helloworld", dependencies: [ "Macro"        ]),
-    .target(name: "connect-static",   dependencies: [ "MacroExpress" ])
+    .target(name: "connect-static",   dependencies: [ "MacroExpress" ]),
+    .target(name: "express-simple",   dependencies: [ "MacroExpress", "cows" ])
   ]
 )

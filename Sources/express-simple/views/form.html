@@ -1,0 +1,32 @@
+{{> header}}
+
+  <form action="/form" method="POST">
+    <div class="row">
+      <div class="medium-6 medium-centered columns">
+        <label>
+          User
+          <input name="u" type="text" placeholder="username"
+                 value="{{user}}" />
+        </label>
+        <p class="help-text" id="userHelpText"
+        >Your username should be cool.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 medium-centered columns">
+        <label>
+          Password <input name="p" type="password" placeholder="password" />
+        </label>
+        <p class="help-text" id="passwordHelpText"
+          >Your password must have at least 1337 Emoji.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 medium-centered columns">
+        <input type="submit" class="button" value="Submit" />
+      </div>
+    </div>
+  </form>
+  
+  <pre>{{debug}}</pre>
+{{> footer}}
