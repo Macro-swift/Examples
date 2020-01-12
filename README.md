@@ -14,7 +14,7 @@ This repository contains examples for
 ### Running Examples as Scripts
 
 Single file examples can be run as scripts using [swift-sh](https://github.com/mxcl/swift-sh),
-which can be installed using a simple `brew install swift-sh`.
+which can be installed using a simple `brew install mxcl/made/swift-sh`.
 
 Example:
 ```
