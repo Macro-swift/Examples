@@ -11,8 +11,8 @@ app.use(logger("dev"))
 app.use(serveStatic(__dirname() + "/public"))
 
 app.use { req, res, next in
-  guard req.url == "/" else { return next() }
-  res.redirect("/index.html")
+    guard req.url == "/" else { return next() }
+    res.redirect("/index.html")
 }
 
 app.listen(1337) {
