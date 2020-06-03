@@ -1,7 +1,7 @@
 #!/usr/bin/swift sh
 
 import Foundation
-import MacroExpress // @Macro-swift ~> 0.0.3
+import MacroExpress // @Macro-swift ~> 0.0.4
 
 let dirname = __dirname()
 
@@ -11,8 +11,8 @@ app.use(logger("dev"))
 app.use(serveStatic(__dirname() + "/public"))
 
 app.use { req, res, next in
-  guard req.url == "/" else { return next() }
-  res.redirect("/index.html")
+    guard req.url == "/" else { return next() }
+    res.redirect("/index.html")
 }
 
 app.listen(1337) {

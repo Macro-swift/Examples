@@ -13,14 +13,21 @@ This repository contains examples for
 
 ### Running Examples as Scripts
 
-Single file examples can be run as scripts using [swift-sh](https://github.com/mxcl/swift-sh),
-which can be installed using a simple `brew install mxcl/made/swift-sh`.
+Examples can be run as scripts using [swift-sh](https://github.com/mxcl/swift-sh)
+(can be installed using a simple `brew install mxcl/made/swift-sh`).
 
 Example:
 ```
 $ Sources/httpd-helloworld/main.swift
 2020-01-07T17:14:35+0100 notice: Server listening on http://localhost:1337/
+
+$ Sources/express-simple/main.swift
+2020-06-03T14:58:59+0200 notice: Server listening on http://localhost:1337
 ```
+
+Looks like this:
+![MacroExpress Simple Screenshot](https://zeezide.de/img/macro/MacroExpressSimple.png)
+
 
 ### Who
 
