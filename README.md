@@ -20,7 +20,7 @@ Examples can be run as scripts using [swift-sh](https://github.com/mxcl/swift-sh
 
 ### httpd-helloworld
 
-Raw httpd w/o Express extras.
+Raw HTTP server w/o Express extras (middleware, templates).
 
 ```bash
 $ Sources/httpd-helloworld/main.swift
@@ -64,7 +64,10 @@ $ Sources/express-simple/main.swift
 2020-06-03T14:58:59+0200 notice: Server listening on http://localhost:1337
 ```
 
-Single source file with associated static resources and Mustache templates.
+Single source file with associated static resources and
+[Mustache](https://github.com/AlwaysRightInstitute/mustache) 
+templates. 
+Forms, cookies, JSON, sessions, templates and cows - you get it all!
 
 ```swift
 #!/usr/bin/swift sh
@@ -93,12 +96,12 @@ app.use { req, _, next in
     next()
 }
 ...
+
 // MARK: - Cows
 
 app.get("/cows") { _, res, _ in
     res.send("<html><body><pre>\(cows.vaca())</pre></body></html>")
 }
-
 
 // MARK: - Main page
 
@@ -115,7 +118,7 @@ app.get("/") { req, res, _ in
 ...
 ```
 
-Sample page:
+Main index.html Mustache template, w/ header/footer templates:
 ```mustache
 {{> header}}
 
