@@ -1,6 +1,6 @@
 #!/usr/bin/swift sh
 
-import Macro // @Macro-swift ~> 0.0.12
+import Macro // @Macro-swift ~> 0.5.4
 
 http.createServer { req, res in
     // log request
@@ -21,6 +21,6 @@ http.createServer { req, res in
     // finish up
     res.end()
 }
-.listen(1337) { server in
-    console.log("Server listening on http://localhost:1337/")
+.listen(1337, "0.0.0.0") { server in
+    console.log("Server listening on http://0.0.0.0:1337/")
 }
