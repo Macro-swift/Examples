@@ -16,6 +16,9 @@ This repository contains examples for
 Examples can be run as scripts using [swift-sh](https://github.com/mxcl/swift-sh)
 (can be installed using a simple `brew install mxcl/made/swift-sh`).
 
+This also contains an example for deploying to AWS Lambda:
+[express-simple-lambda](Sources/express-simple-lambda/).
+
 ## Examples
 
 ### httpd-helloworld
@@ -142,6 +145,8 @@ Main index.html Mustache template, w/ header/footer templates:
 Looks like this:
 ![MacroExpress Simple Screenshot](https://zeezide.de/img/macro/MacroExpressSimple.png)
 
+There is an AWS Lambda variant of this (with minor adjustments):
+[express-simple-lambda](Sources/express-simple-lambda/).
 
 ### connect-simple
 
