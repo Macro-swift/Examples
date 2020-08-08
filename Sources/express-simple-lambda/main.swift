@@ -81,10 +81,19 @@ app.get("/") { req, res, _ in
 
 // MARK: - Start Server
 
-#if false
+#if false // use this, if you want to use the Lambda server emulation (JSON!)
+  import func Foundation.setenv
+  if process.isRunningInXCode {
+    // Enable Lambda emulation when running locally.
+    setenv("LOCAL_LAMBDA_SERVER_ENABLED", "true", 1)
+  }
+#endif
+
+if process.isRunningInLambda {
+  Lambda.run(app)
+}
+else {
   app.listen(1337) {
     console.log("Server listening on http://localhost:1337")
   }
-#else
-  Lambda.run(app)
-#endif
+}

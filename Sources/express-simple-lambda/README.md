@@ -6,6 +6,8 @@
 This is the same demo app like express-simple, it shows Mustache templates,
 endpoints and some middleware.
 
+Looks like this:
+![MacroExpress Simple Screenshot](https://zeezide.de/img/macro/MacroExpressSimple.png)
 
 ### Build & Deployment
 
@@ -57,6 +59,9 @@ Invoke `swift lambda deploy -h` to see all options.
 ### Differences
 
 A few adjustments had to be made:
+- `Lambda.run` is used when the server is running in Lambda. The regular listen is used
+  when the server is run locally.
+  (There is a third option: `LOCAL_LAMBDA_SERVER_ENABLED` of the Swift AWS Runtime).
 - the `session` related things have been removed, lambdas are not
   long running and cannot use the RAM based session middleware
   (the session module could be used, but a persistent backend, 
@@ -67,6 +72,15 @@ A few adjustments had to be made:
   (FIXME, improve this, maybe by considering the AWS_LAMBDA_FUNCTION_NAME
    environment variable in the serve module, or allow setting a prefix somehow)
 
+### Links
+
+- [MacroLambda](https://github.com/Macro-swift/MacroLambda)
+- WWDC 2020: [Use Swift on AWS Lambda with Xcode](https://developer.apple.com/videos/play/wwdc2020/10644/)
+- Tutorial: [Create your first HTTP endpoint with Swift on AWS Lambda](https://fabianfett.de/swift-on-aws-lambda-creating-your-first-http-endpoint)
+- [Swift AWS Lambda Runtime](https://github.com/swift-server/swift-aws-lambda-runtime)
+- Amazon Web Services [API Gateway](https://aws.amazon.com/api-gateway/)
+- [µExpress](http://www.alwaysrightinstitute.com/microexpress-nio2/)
+- [SwiftNIO](https://github.com/apple/swift-nio)
 
 ## Who
 
@@ -80,5 +94,3 @@ presumably any form of praise you can think of.
 
 There is a `#microexpress` channel on the 
 [Noze.io Slack](http://slack.noze.io/). Feel free to join!
-
-
