@@ -13,7 +13,7 @@ let package = Package(
   products: [
     .executable(name: "httpd-helloworld",      targets: [ "httpd-helloworld" ]),
     .executable(name: "connect-static",        targets: [ "connect-static"   ]),
-    .executable(name: "express-simple",        targets: [ "express-simple"   ])
+    .executable(name: "express-simple",        targets: [ "express-simple"   ]),
     .executable(name    :   "express-simple-lambda", 
                 targets : [ "express-simple-lambda" ])
   ],
