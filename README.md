@@ -160,9 +160,6 @@ $ Sources/express-simple/main.swift
 ## Who
 
 **Macro** is brought to you by
-the
-[Always Right Institute](http://www.alwaysrightinstitute.com)
-and
 [ZeeZide](http://zeezide.de).
 We like 
 [feedback](https://twitter.com/ar_institute), 

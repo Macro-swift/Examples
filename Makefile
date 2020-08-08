@@ -29,6 +29,14 @@ clean :
 	# pickyness.
 	rm -rf $(SWIFT_BUILD_DIR) 
 
+lambda: express-simple-lambda
+
+
+# Building for Linux
+
+express-simple-lambda:
+	swift lambda build -p express-simple-lambda -d 5.2
+
 xc-xenial:
 	$(SWIFT_BUILD) -c $(CONFIGURATION) --destination $(XENIAL_DESTINATION)
 
