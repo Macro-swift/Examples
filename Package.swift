@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.2
 
 import PackageDescription
 
@@ -11,9 +11,11 @@ let package = Package(
   ],
   
   products: [
-    .executable(name: "httpd-helloworld", targets: [ "httpd-helloworld" ]),
-    .executable(name: "connect-static",   targets: [ "connect-static"   ]),
-    .executable(name: "express-simple",   targets: [ "express-simple"   ])
+    .executable(name: "httpd-helloworld",      targets: [ "httpd-helloworld" ]),
+    .executable(name: "connect-static",        targets: [ "connect-static"   ]),
+    .executable(name: "express-simple",        targets: [ "express-simple"   ])
+    .executable(name    :   "express-simple-lambda", 
+                targets : [ "express-simple-lambda" ])
   ],
   
   dependencies: [
@@ -22,7 +24,7 @@ let package = Package(
     .package(url: "https://github.com/Macro-swift/Macro.git",
              from: "0.5.5"),
     .package(url: "https://github.com/Macro-swift/MacroExpress.git",
-             from: "0.5.4"),
+             from: "0.5.5"),
     .package(url: "https://github.com/Macro-swift/MacroLambda.git",
              from: "0.1.3"),
     .package(url: "https://github.com/AlwaysRightInstitute/cows",
