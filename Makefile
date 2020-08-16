@@ -34,8 +34,9 @@ lambda: express-simple-lambda
 
 # Building for Linux
 
+#-d 5.2
 express-simple-lambda:
-	swift lambda build -p express-simple-lambda -d 5.2
+	swift lambda build -p express-simple-lambda 
 
 xc-xenial:
 	$(SWIFT_BUILD) -c $(CONFIGURATION) --destination $(XENIAL_DESTINATION)

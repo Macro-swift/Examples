@@ -17,7 +17,7 @@ tokens and region.
 Call `swift lambda build` to build the demo for AWS, 
 or just `swift lambda deploy` to deploy it, it'll build on demand:
 ```bash
-swift lambda deploy -d 5.2 -p express-simple-lambda -f HelloWorld
+swift lambda deploy -p express-simple-lambda -f HelloWorld
 Lambda: express-simple-lambda.zip
 {
   "FunctionName": "HelloWorld",
@@ -42,9 +42,6 @@ Lambda: express-simple-lambda.zip
 ```
 
 What are the arguments?
-- `-d 5.2` selects the Swift 5.2 Amazon Linux cross compiler
-  (installed via: 
-   `brew install SPMDestinations/tap/spm-dest-5.2-x86_64-amazonlinux2`)
 - `-p express-simple-lambda` selects the package manager product to be deployed 
   as a function. This is needed because we have multiple products in the
   Package.swift (if the name matches the package directory, it can't be
@@ -66,11 +63,6 @@ A few adjustments had to be made:
   long running and cannot use the RAM based session middleware
   (the session module could be used, but a persistent backend, 
    e.g. using DynamoDB, would be required)
-- the test is deployed into a function called "HelloWorld", which
-  is hosted under `/hello`. To deal with that, the static resources
-  had to be moved to a hello subdirectory 
-  (FIXME, improve this, maybe by considering the AWS_LAMBDA_FUNCTION_NAME
-   environment variable in the serve module, or allow setting a prefix somehow)
 
 ### Swift Source
 
