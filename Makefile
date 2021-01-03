@@ -7,9 +7,9 @@ SWIFT_BUILD_DIR=.build
 CONFIGURATION=release
 
 # docker config
-#SWIFT_BUILD_IMAGE="helje5/swift-dev:5.1.snap2019-07-01"
+SWIFT_BUILD_IMAGE="swift:5.3.1"
 #SWIFT_BUILD_IMAGE="swift:5.1.3"
-SWIFT_BUILD_IMAGE="swift:5.0.3"
+#SWIFT_BUILD_IMAGE="swift:5.0.3"
 DOCKER_BUILD_DIR=".docker.build"
 SWIFT_DOCKER_BUILD_DIR="$(DOCKER_BUILD_DIR)/x86_64-unknown-linux/$(CONFIGURATION)"
 DOCKER_BUILD_PRODUCT="$(DOCKER_BUILD_DIR)/$(TOOL_NAME)"
@@ -28,6 +28,15 @@ clean :
 	# We have a different definition of "clean", might be just German
 	# pickyness.
 	rm -rf $(SWIFT_BUILD_DIR) 
+
+lambda: express-simple-lambda
+
+
+# Building for Linux
+
+#-d 5.2
+express-simple-lambda:
+	swift lambda build -p express-simple-lambda 
 
 xc-xenial:
 	$(SWIFT_BUILD) -c $(CONFIGURATION) --destination $(XENIAL_DESTINATION)
