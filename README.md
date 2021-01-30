@@ -24,7 +24,7 @@ This also contains an example for deploying to AWS Lambda:
 
 ## Examples
 
-### httpd-helloworld
+### [httpd-helloworld](Sources/httpd-helloworld)
 
 Raw HTTP server w/o Express extras (middleware, templates).
 
@@ -63,7 +63,7 @@ http.createServer { req, res in
 }
 ```
 
-### express-simple
+### [express-simple](Sources/express-simple)
 
 ```bash
 $ Sources/express-simple/main.swift
@@ -151,7 +151,7 @@ Looks like this:
 There is an AWS Lambda variant of this (with minor adjustments):
 [express-simple-lambda](Sources/express-simple-lambda/).
 
-### connect-simple
+### [connect-simple](Sources/connect-simple)
 
 Use the simpler `connect` module, instead of `express`. 
 Probably no need to do this in the real world, just use MacroExpress.
@@ -163,9 +163,9 @@ $ Sources/express-simple/main.swift
 2020-06-03T14:58:59+0200 notice: Server listening on http://localhost:1337
 ```
 
-### todomvc
+### [todomvc](Sources/todomvc/)
 
-An implementation of a [Todo-Backend](http://todobackend.com/), 
+A MacroExpress implementation of a [Todo-Backend](http://todobackend.com/), 
 a simple JSON API to access and modify a list of todos.
 
 ```bash
