@@ -13,11 +13,14 @@ This repository contains examples for
 
 ### Running Examples as Scripts
 
-Examples can be run as scripts using [swift-sh](https://github.com/mxcl/swift-sh)
-(can be installed using a simple `brew install mxcl/made/swift-sh`).
+Single file examples can be either run as scripts using 
+[swift-sh](https://github.com/mxcl/swift-sh)
+(install using a simple `brew install mxcl/made/swift-sh`),
+from within Xcode or via `swift run`.
 
 This also contains an example for deploying to AWS Lambda:
 [express-simple-lambda](Sources/express-simple-lambda/).
+
 
 ## Examples
 

@@ -1,6 +1,6 @@
 <h2>Macro.swift connect-static
-  <img src="http://zeezide.com/img/MicroExpressIcon1024.png"
-       align="right" width="100" height="100" />
+  <img src="http://zeezide.com/img/macro/MacroExpressIcon128.png"
+           align="right" width="100" height="100" />
 </h2>
 
 Demonstrates the use of the `connect.serveStatic` middleware.
