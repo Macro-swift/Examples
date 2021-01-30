@@ -1,7 +1,7 @@
 #!/usr/bin/swift sh
 
-import MacroExpress // @Macro-swift          ~> 0.5.4
-import cows         // @AlwaysRightInstitute ~> 1.0.0
+import MacroExpress // @Macro-swift
+import cows         // @AlwaysRightInstitute
 
 let app = express()
 

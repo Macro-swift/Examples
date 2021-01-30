@@ -11,10 +11,11 @@ let package = Package(
   ],
   
   products: [
-    .executable(name: "httpd-helloworld",      targets: [ "httpd-helloworld" ]),
-    .executable(name: "connect-static",        targets: [ "connect-static"   ]),
-    .executable(name: "express-simple",        targets: [ "express-simple"   ]),
-    .executable(name    :   "express-simple-lambda", 
+    .executable(name: "httpd-helloworld", targets: [ "httpd-helloworld" ]),
+    .executable(name: "connect-static",   targets: [ "connect-static"   ]),
+    .executable(name: "express-simple",   targets: [ "express-simple"   ]),
+    .executable(name: "todomvc",          targets: [ "todomvc"          ]),
+    .executable(name    :   "express-simple-lambda",
                 targets : [ "express-simple-lambda" ])
   ],
   
@@ -22,9 +23,9 @@ let package = Package(
     // A lot of packages for demonstration purposes, only add what you
     // actually need in your own project.
     .package(url: "https://github.com/Macro-swift/Macro.git",
-             from: "0.6.2"),
+             from: "0.8.7"),
     .package(url: "https://github.com/Macro-swift/MacroExpress.git",
-             from: "0.6.1"),
+             from: "0.8.4"),
     .package(url: "https://github.com/Macro-swift/MacroLambda.git",
              from: "0.2.1"),
     .package(url: "https://github.com/AlwaysRightInstitute/cows",
@@ -35,7 +36,8 @@ let package = Package(
     .target(name: "httpd-helloworld", dependencies: [ "Macro"        ]),
     .target(name: "connect-static",   dependencies: [ "MacroExpress" ]),
     .target(name: "express-simple",   dependencies: [ "MacroExpress", "cows" ]),
-    
+    .target(name: "todomvc",          dependencies: [ "MacroExpress" ]),
+
     .target(name: "express-simple-lambda",
             dependencies: [ "MacroLambda", "cows" ])
   ]

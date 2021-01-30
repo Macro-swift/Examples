@@ -1,7 +1,7 @@
 #!/usr/bin/swift sh
 
-import MacroLambda // @Macro-swift          ~> 0.1.1
-import cows        // @AlwaysRightInstitute ~> 1.0.0
+import MacroLambda // @Macro-swift
+import cows        // @AlwaysRightInstitute
 
 let app = express()
 

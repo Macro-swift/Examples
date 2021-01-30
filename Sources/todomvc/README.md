@@ -1,25 +1,18 @@
-<h2>Macro.swift connect-static
+<h2>MacroExpress TodoMVC
   <img src="http://zeezide.com/img/macro/MacroExpressIcon128.png"
            align="right" width="100" height="100" />
 </h2>
 
-Demonstrates the use of the `connect.serveStatic` middleware.
+An implementation of a [Todo-Backend](http://todobackend.com/), 
+a simple JSON API to access and modify a list of todos.
+
 
 ## Running the Sample
 
-If you have
-[swift-sh](https://github.com/mxcl/swift-sh)
-installed (`brew install swift-sh`),
-just starting the main.swift file works:
+Use `swift run` or run the sample from within Xcode:
 ```
-$ Sources/connect-static/main.swift
-2020-01-07T17:14:35+0100 notice: Server listening on http://localhost:1337/
-```
-
-Or you can use `swift run` w/o installing additional software:
-```
-$ swift run connect-static
-2020-01-07T21:37:05+0100 notice: Server listening on http://localhost:1337/
+$ swift run todomvc
+2021-01-30T15:51:41+0100 notice μ.express.app : Listening on 8042
 ```
 
 ### Who
