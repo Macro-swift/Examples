@@ -1,6 +1,6 @@
 #!/usr/bin/swift sh
 
-import MacroExpress // @Macro-swift ~> 0.5.4
+import MacroExpress // @Macro-swift
 
 let dirname = __dirname()
 

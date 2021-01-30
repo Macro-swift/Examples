@@ -34,7 +34,7 @@ Single source file:
 ```swift
 #!/usr/bin/swift sh
 
-import Macro // @Macro-swift ~> 0.0.12
+import Macro // @Macro-swift
 
 http.createServer { req, res in
     // log request
@@ -75,8 +75,8 @@ Forms, cookies, JSON, sessions, templates and cows - you get it all!
 ```swift
 #!/usr/bin/swift sh
 
-import MacroExpress // @Macro-swift          ~> 0.0.4
-import cows         // @AlwaysRightInstitute ~> 1.0.0
+import MacroExpress // @Macro-swift
+import cows         // @AlwaysRightInstitute
 
 let app = express()
 
