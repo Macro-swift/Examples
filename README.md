@@ -151,7 +151,7 @@ Looks like this:
 There is an AWS Lambda variant of this (with minor adjustments):
 [express-simple-lambda](Sources/express-simple-lambda/).
 
-### [connect-simple](Sources/connect-simple)
+### [connect-static](Sources/connect-static)
 
 Use the simpler `connect` module, instead of `express`. 
 Probably no need to do this in the real world, just use MacroExpress.
@@ -160,7 +160,7 @@ Single source file with a static `index.html` plus images.
 
 ```bash
 $ Sources/express-simple/main.swift
-2020-06-03T14:58:59+0200 notice: Server listening on http://localhost:1337
+2021-01-30T16:16:17+0100 notice μ.console : Server listening on http://localhost:1337
 ```
 
 ### [todomvc](Sources/todomvc/)
