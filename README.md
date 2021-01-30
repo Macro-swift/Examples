@@ -13,15 +13,18 @@ This repository contains examples for
 
 ### Running Examples as Scripts
 
-Examples can be run as scripts using [swift-sh](https://github.com/mxcl/swift-sh)
-(can be installed using a simple `brew install mxcl/made/swift-sh`).
+Single file examples can be either run as scripts using 
+[swift-sh](https://github.com/mxcl/swift-sh)
+(install using a simple `brew install mxcl/made/swift-sh`),
+from within Xcode or via `swift run`.
 
 This also contains an example for deploying to AWS Lambda:
 [express-simple-lambda](Sources/express-simple-lambda/).
 
+
 ## Examples
 
-### httpd-helloworld
+### [httpd-helloworld](Sources/httpd-helloworld)
 
 Raw HTTP server w/o Express extras (middleware, templates).
 
@@ -34,7 +37,7 @@ Single source file:
 ```swift
 #!/usr/bin/swift sh
 
-import Macro // @Macro-swift ~> 0.0.12
+import Macro // @Macro-swift
 
 http.createServer { req, res in
     // log request
@@ -60,7 +63,7 @@ http.createServer { req, res in
 }
 ```
 
-### express-simple
+### [express-simple](Sources/express-simple)
 
 ```bash
 $ Sources/express-simple/main.swift
@@ -75,8 +78,8 @@ Forms, cookies, JSON, sessions, templates and cows - you get it all!
 ```swift
 #!/usr/bin/swift sh
 
-import MacroExpress // @Macro-swift          ~> 0.0.4
-import cows         // @AlwaysRightInstitute ~> 1.0.0
+import MacroExpress // @Macro-swift
+import cows         // @AlwaysRightInstitute
 
 let app = express()
 
@@ -148,7 +151,7 @@ Looks like this:
 There is an AWS Lambda variant of this (with minor adjustments):
 [express-simple-lambda](Sources/express-simple-lambda/).
 
-### connect-simple
+### [connect-simple](Sources/connect-simple)
 
 Use the simpler `connect` module, instead of `express`. 
 Probably no need to do this in the real world, just use MacroExpress.
@@ -160,6 +163,15 @@ $ Sources/express-simple/main.swift
 2020-06-03T14:58:59+0200 notice: Server listening on http://localhost:1337
 ```
 
+### [todomvc](Sources/todomvc/)
+
+A MacroExpress implementation of a [Todo-Backend](http://todobackend.com/), 
+a simple JSON API to access and modify a list of todos.
+
+```bash
+$ swift run todomvc
+2020-06-03T14:58:59+0200 notice: Server listening on http://localhost:1337
+```
 
 
 ## Who
