@@ -47,7 +47,7 @@ else {
 let dataIndexPath = docPath + "/" + dataIndex
 
 
-// MARK: - Serve Individual
+// MARK: - Serve Individual Files
 
 /// This serves individual, fixed files.
 func serveFile(_ path: String) -> Middleware {
