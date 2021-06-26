@@ -23,11 +23,11 @@ let package = Package(
     // A lot of packages for demonstration purposes, only add what you
     // actually need in your own project.
     .package(url: "https://github.com/Macro-swift/Macro.git",
-             from: "0.8.7"),
+             from: "0.8.8"),
     .package(url: "https://github.com/Macro-swift/MacroExpress.git",
-             from: "0.8.4"),
+             from: "0.8.6"),
     .package(url: "https://github.com/Macro-swift/MacroLambda.git",
-             from: "0.2.1"),
+             from: "0.4.0"),
     .package(url: "https://github.com/AlwaysRightInstitute/cows",
              from: "1.0.7")
   ],
