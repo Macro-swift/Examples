@@ -14,6 +14,7 @@ let package = Package(
     .executable(name: "httpd-helloworld", targets: [ "httpd-helloworld" ]),
     .executable(name: "connect-static",   targets: [ "connect-static"   ]),
     .executable(name: "express-simple",   targets: [ "express-simple"   ]),
+    .executable(name: "servedocc",        targets: [ "servedocc"        ]),
     .executable(name: "todomvc",          targets: [ "todomvc"          ]),
     .executable(name    :   "express-simple-lambda",
                 targets : [ "express-simple-lambda" ])
@@ -36,6 +37,7 @@ let package = Package(
     .target(name: "httpd-helloworld", dependencies: [ "Macro"        ]),
     .target(name: "connect-static",   dependencies: [ "MacroExpress" ]),
     .target(name: "express-simple",   dependencies: [ "MacroExpress", "cows" ]),
+    .target(name: "servedocc",        dependencies: [ "MacroExpress" ]),
     .target(name: "todomvc",          dependencies: [ "MacroExpress" ]),
 
     .target(name: "express-simple-lambda",

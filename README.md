@@ -173,6 +173,19 @@ $ swift run todomvc
 2020-06-03T14:58:59+0200 notice: Server listening on http://localhost:1337
 ```
 
+### [servedocc](Sources/servedocc/)
+
+Macro server to serve "DocC" archives, a format to document Swift frameworks
+and packages:
+[Documenting a Swift Framework or Package](https://developer.apple.com/documentation/Xcode/documenting-a-swift-framework-or-package).
+
+```bash
+$ swift run servedocc SlothCreator.doccarchive
+2021-06-26T17:14:08+0200 notice μ.console : Server listening on: http://localhost:1337/
+2021-06-26T17:14:08+0200 notice μ.console : DocC Archive: /Users/helge/Downloads/SlothCreator.doccarchive
+2021-06-26T17:14:13+0200 notice μ.console : GET /documentation/              200 - - 2   ms
+```
+
 
 ## Who
 
