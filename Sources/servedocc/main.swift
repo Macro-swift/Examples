@@ -29,25 +29,25 @@ let indexPath   = archivePath + "/index.html"
 let docPath     = archivePath + "/data/documentation"
 
 guard fs.existsSync(archivePath) else {
-  print("Specified file does not exist:", archivePath)
+  console.error("Specified file does not exist:", archivePath)
   process.exit(2)
 }
 guard fs.existsSync(indexPath), fs.existsSync(docPath) else {
-  print("File does not look like a DocC archive:", archivePath)
+  console.error("File does not look like a DocC archive:", archivePath)
   process.exit(3)
 }
 
 guard let dataIndex = (try? fs.readdirSync(docPath))?
                               .first(where: { $0.hasSuffix(".json")} )
 else {
-  print("File does not look like a DocC archive, missing data index:",
-        archivePath)
+  console.error("File does not look like a DocC archive, missing data index:",
+                archivePath)
   process.exit(3)
 }
 let dataIndexPath = docPath + "/" + dataIndex
 
 
-// MARK: - Serve Individual
+// MARK: - Serve Individual Files
 
 /// This serves individual, fixed files.
 func serveFile(_ path: String) -> Middleware {
