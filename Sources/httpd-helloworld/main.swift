@@ -4,7 +4,7 @@ import Macro // @Macro-swift
 
 http.createServer { req, res in
     // log request
-    console.log("\(req.method) \(req.url)")
+    req.log.log("\(req.method) \(req.url)")
 
     // set content type to HTML
     res.writeHead(200, [ "Content-Type": "text/html" ])
@@ -22,5 +22,5 @@ http.createServer { req, res in
     res.end()
 }
 .listen(1337) { server in
-    console.log("Server listening on http://*:1337/")
+    server.log.log("Server listening on http://*:1337/")
 }

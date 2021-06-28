@@ -45,5 +45,5 @@ http.createServer { req, res in
   _ = req.pipe(proxiedRequest)
 }
 .listen(1337) { server in
-  console.log("Server listening on http://0.0.0.0:1337/")
+  server.log.log("Server listening on http://0.0.0.0:1337/")
 }
