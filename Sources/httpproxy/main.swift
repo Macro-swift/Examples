@@ -42,7 +42,7 @@ http.createServer { req, res in
   }
 
   // Send the request body to the target server
-  _ = req.pipe(proxiedRequest)
+  req.pipe(proxiedRequest)
 }
 .listen(1337) { server in
   server.log.log("Server listening on http://0.0.0.0:1337/")
