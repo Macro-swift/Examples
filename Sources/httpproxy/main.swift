@@ -7,6 +7,12 @@ http.createServer { req, res in
   // log request
   req.log.log("\(req.method) \(req.url)")
 
+  guard req.method != "CONNECT" else {
+    req.log.error("Connect not supported.")
+    res.writeHead(501)
+    res.end()
+    return
+  }
   guard let url = URL(string: req.url),
         let scheme = url.scheme, let host = url.host else
   {
