@@ -7,6 +7,12 @@ http.createServer { req, res in
   // log request
   req.log.log("\(req.method) \(req.url)")
 
+  guard req.method != "CONNECT" else {
+    req.log.error("Connect not supported.")
+    res.writeHead(501)
+    res.end()
+    return
+  }
   guard let url = URL(string: req.url),
         let scheme = url.scheme, let host = url.host else
   {
@@ -42,7 +48,7 @@ http.createServer { req, res in
   }
 
   // Send the request body to the target server
-  _ = req.pipe(proxiedRequest)
+  req.pipe(proxiedRequest)
 }
 .listen(1337) { server in
   server.log.log("Server listening on http://0.0.0.0:1337/")
