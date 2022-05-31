@@ -2,8 +2,6 @@
 
 import MacroExpress // @Macro-swift
 
-let dirname = __dirname()
-
 let app = connect()
 
 app.use(logger("dev"))
