@@ -1,4 +1,4 @@
-// swift-tools-version:5.4
+// swift-tools-version:5.5
 
 import PackageDescription
 
@@ -25,11 +25,11 @@ let package = Package(
     // A lot of packages for demonstration purposes, only add what you
     // actually need in your own project.
     .package(url: "https://github.com/Macro-swift/Macro.git",
-             from: "0.9.0"),
+             from: "1.0.0"),
     .package(url: "https://github.com/Macro-swift/MacroExpress.git",
-             from: "0.9.0"),
+             from: "1.0.0"),
     .package(url: "https://github.com/Macro-swift/MacroLambda.git",
-             from: "0.4.1"),
+             from: "0.5.0"),
     .package(url: "https://github.com/AlwaysRightInstitute/cows",
              from: "1.0.10")
   ],
