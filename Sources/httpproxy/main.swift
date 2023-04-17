@@ -1,7 +1,12 @@
 #!/usr/bin/swift sh
-
 import Macro // @Macro-swift
 import Foundation
+
+// As with all "Macro*", this tries to replicate the Node.js APIs for Swift.
+//
+// A very basic Macro based (plain) HTTP proxy server. I.e. it doesn't do
+// CONNECT tunneling (i.e. TLS/SSL), but just forward HTTP requests to another
+// HTTP server using the Macro `http` module.
 
 http.createServer { req, res in
   // log request

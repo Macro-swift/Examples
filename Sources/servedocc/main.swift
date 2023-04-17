@@ -1,5 +1,4 @@
 #!/usr/bin/swift sh
-
 import MacroExpress // @Macro-swift
 
 
@@ -84,9 +83,9 @@ for path in staticFiles { // just serve the specific file
 }
 
 // redirects
-app.get("/tutorials")     { _, res, _ in res.redirect("/tutorials/")     }
-   .get("/documentation") { _, res, _ in res.redirect("/documentation/") }
-   .get                   { _, res, _ in res.redirect("/documentation/") }
+app.get("/tutorials")     { _, res in res.redirect("/tutorials/")     }
+   .get("/documentation") { _, res in res.redirect("/documentation/") }
+   .get                   { _, res in res.redirect("/documentation/") }
 
 app.listen(1337) {
   console.log("Server listening on: http://localhost:1337/")
