@@ -198,4 +198,5 @@ cool [contract work](http://zeezide.com/en/services/services.html),
 presumably any form of praise you can think of.
 
 There is a `#microexpress` channel on the 
-[Noze.io Slack](http://slack.noze.io/). Feel free to join!
+[Noze.io Slack](http://slack.noze.io/). 
+Feel free to join!
