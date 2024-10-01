@@ -69,7 +69,7 @@ A few adjustments had to be made:
 ```swift
 #!/usr/bin/swift sh
 
-import MacroLambda // @Macro-swift          ~> 0.1.3
+import MacroLambda // @Macro-swift          ~> 0.5.0
 import cows        // @AlwaysRightInstitute ~> 1.0.0
 
 let app = express()
@@ -93,10 +93,10 @@ let taglines = [
 
 // MARK: - Form Handling
 
-app.get("/form") { _, res, _ in
+app.get("/form") { _, res in
     res.render("form")
 }
-app.post("/form") { req, res, _ in
+app.post("/form") { req, res in
     let user = req.body[string: "u"]
     console.log("USER IS: \(user)")
   
@@ -111,14 +111,14 @@ app.post("/form") { req, res, _ in
 
 // MARK: - JSON & Cookies
 
-app.get("/json") { _, res, _ in
+app.get("/json") { _, res in
     res.json([
         [ "firstname": "Donald",   "lastname": "Duck" ],
         [ "firstname": "Dagobert", "lastname": "Duck" ]
     ])
 }
 
-app.get("/cookies") { req, res, _ in
+app.get("/cookies") { req, res in
     // returns all cookies as JSON
     res.json(req.cookies)
 }
@@ -126,13 +126,13 @@ app.get("/cookies") { req, res, _ in
 
 // MARK: - Cows
 
-app.get("/cows") { _, res, _ in
+app.get("/cows") { _, res in
     res.send("<html><body><pre>\(cows.vaca())</pre></body></html>")
 }
 
 // MARK: - Main page
 
-app.get("/") { req, res, _ in
+app.get("/") { req, res in
     let tagline = taglines.randomElement()!
   
     let values : [ String : Any ] = [

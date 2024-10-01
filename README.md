@@ -40,22 +40,14 @@ Single source file:
 import Macro // @Macro-swift
 
 http.createServer { req, res in
-    // log request
     console.log("\(req.method) \(req.url)")
-
-    // set content type to HTML
     res.writeHead(200, [ "Content-Type": "text/html" ])
-    
-    // write some HTML
     res.write("<h1>Hello Client: \(req.url)</h1>")
-
     res.write("<table><tbody>")
     for ( key, value ) in req.headers {
         res.write("<tr><td><nobr>\(key)</nobr></td><td>\(value)</td></tr>")
     }
     res.write("</tbody></table>")
-
-    // finish up
     res.end()
 }
 .listen(1337) { server in
@@ -82,12 +74,13 @@ import MacroExpress // @Macro-swift
 import cows         // @AlwaysRightInstitute
 
 let app = express()
-
-app.use(logger("dev"))
-app.use(bodyParser.urlencoded())
-app.use(cookieParser())
-app.use(session())
-app.use(serveStatic(__dirname() + "/public"))
+app.use(
+  logger("dev"),
+  bodyParser.urlencoded(),
+  cookieParser(),
+  session(),
+  serveStatic(__dirname() + "/public")
+)
 
 // MARK: - Express Settings
 
@@ -105,13 +98,13 @@ app.use { req, _, next in
 
 // MARK: - Cows
 
-app.get("/cows") { _, res, _ in
+app.get("/cows") { req, res in
     res.send("<html><body><pre>\(cows.vaca())</pre></body></html>")
 }
 
 // MARK: - Main page
 
-app.get("/") { req, res, _ in
+app.get("/") { req, res in
     let tagline = taglines.randomElement()!
   
     let values : [ String : Any ] = [

@@ -1,15 +1,25 @@
 #!/usr/bin/swift sh
-
 import MacroExpress // @Macro-swift
 import cows         // @AlwaysRightInstitute
 
+// As with all "Macro*", this tries to replicate the Node.js APIs for Swift.
+//
+// This is a little more complex Express.js like example, featuring
+// - cooking parsing,
+// - session handling,
+// - static resource delivery,
+// - Mustache template rendering,
+// - Express middleware.
+
 let app = express()
 
-app.use(logger("dev"))
-app.use(bodyParser.urlencoded())
-app.use(cookieParser())
-app.use(session())
-app.use(serveStatic(__dirname() + "/public"))
+app.use(
+  logger("dev"),
+  bodyParser.urlencoded(),
+  cookieParser(),
+  session(),
+  serveStatic(__dirname() + "/public")
+)
 
 // MARK: - Express Settings
 
@@ -37,10 +47,10 @@ let taglines = [
 
 // MARK: - Form Handling
 
-app.get("/form") { _, res, _ in
+app.get("/form") { _, res in
     res.render("form")
 }
-app.post("/form") { req, res, _ in
+app.post("/form") { req, res in
     let user = req.body[string: "u"]
     console.log("USER IS: \(user)")
   
@@ -55,14 +65,14 @@ app.post("/form") { req, res, _ in
 
 // MARK: - JSON & Cookies
 
-app.get("/json") { _, res, _ in
+app.get("/json") { _, res in
     res.json([
         [ "firstname": "Donald",   "lastname": "Duck" ],
         [ "firstname": "Dagobert", "lastname": "Duck" ]
     ])
 }
 
-app.get("/cookies") { req, res, _ in
+app.get("/cookies") { req, res in
     // returns all cookies as JSON
     res.json(req.cookies)
 }
@@ -70,14 +80,14 @@ app.get("/cookies") { req, res, _ in
 
 // MARK: - Cows
 
-app.get("/cows") { _, res, _ in
+app.get("/cows") { _, res in
     res.send("<html><body><pre>\(cows.vaca())</pre></body></html>")
 }
 
 
 // MARK: - Main page
 
-app.get("/") { req, res, _ in
+app.get("/") { req, res in
     let tagline = taglines.randomElement()!
   
     let values : [ String : Any ] = [
