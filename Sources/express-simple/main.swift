@@ -62,6 +62,22 @@ app.post("/form") { req, res in
     res.render("form", options)
 }
 
+app.get("/multer") { _, res in
+    res.render("multer")
+}
+app.post("/multer", multer().array("file", 10)) { req, res, _ in
+    req.log.info("Got files:", req.files["file"])
+    res.render("multer", [
+      "files": req.files["file"]?.map {
+         [ "name":     $0.originalName,
+           "size":     $0.buffer?.length ?? 0,
+           "mimeType": $0.mimeType ]
+      } ?? [],
+      "hasFiles": !(req.files["file"]?.isEmpty ?? true)
+    ])
+}
+
+
 
 // MARK: - JSON & Cookies
 
