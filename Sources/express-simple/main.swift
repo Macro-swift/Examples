@@ -14,11 +14,11 @@ import cows         // @AlwaysRightInstitute
 let app = express()
 
 app.use(
-  logger("dev"),
-  bodyParser.urlencoded(),
-  cookieParser(),
-  session(),
-  serveStatic(__dirname() + "/public")
+    logger("dev"),
+    bodyParser.urlencoded(),
+    cookieParser(),
+    session(),
+    serveStatic(__dirname() + "/public")
 )
 
 // MARK: - Express Settings
