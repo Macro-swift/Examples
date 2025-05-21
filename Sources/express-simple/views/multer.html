@@ -1,0 +1,46 @@
+{{> header}}
+
+  <form action="/multer" method="POST" enctype="multipart/form-data">
+    <div class="row">
+      <div class="medium-6 medium-centered columns">
+        <p>
+        Macro comes w/ the `multer` module that is
+        roughly designed after the Node 
+        <a href="https://github.com/expressjs/multer#readme" 
+           target="ext">multer</a>.
+        </p>
+      </div>
+    </div>
+            
+    <div class="row">
+      <div class="medium-6 medium-centered columns">
+        <label>
+          <input type="file" id="filename" name="file"
+                 multiple="multiple" />
+        </label>
+        <p class="help-text">Upload some files.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 medium-centered columns">
+        <input type="submit" class="button" value="Submit" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 medium-centered columns">
+        <hr />
+        {{^files}}No files uploaded.{{/}}
+        {{#hasFiles}}
+          Files:
+          <ul>
+          {{#files}}
+            <li>{{name}}<br />#{{size}} bytes, {{mimeType}}</li>
+          {{/files}}
+          </ul>
+        {{/hasFiles}}
+      </div>
+    </div>
+  </form>
+  
+  <pre>{{debug}}</pre>
+{{> footer}}
