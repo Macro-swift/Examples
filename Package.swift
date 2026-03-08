@@ -6,7 +6,7 @@ let package = Package(
 
   name: "MacroExamples",
 
-  platforms: [ .macOS(.v12), .iOS(.v15) ],
+  platforms: [ .macOS(.v15), .iOS(.v18) ],
   
   products: [
     .executable(name: "httpd-helloworld", targets: [ "httpd-helloworld" ]),
