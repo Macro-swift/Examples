@@ -6,9 +6,7 @@ let package = Package(
 
   name: "MacroExamples",
 
-  platforms: [
-    .macOS(.v10_14), .iOS(.v11)
-  ],
+  platforms: [ .macOS(.v12), .iOS(.v15) ],
   
   products: [
     .executable(name: "httpd-helloworld", targets: [ "httpd-helloworld" ]),
@@ -25,11 +23,11 @@ let package = Package(
     // A lot of packages for demonstration purposes, only add what you
     // actually need in your own project.
     .package(url: "https://github.com/Macro-swift/Macro.git",
-             from: "1.0.4"),
+             from: "1.0.22"),
     .package(url: "https://github.com/Macro-swift/MacroExpress.git",
-             from: "1.0.7"),
+             from: "1.0.26"),
     .package(url: "https://github.com/Macro-swift/MacroLambda.git",
-             from: "0.5.0"),
+             from: "0.6.0"),
     .package(url: "https://github.com/AlwaysRightInstitute/cows",
              from: "1.0.10")
   ],
