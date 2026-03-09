@@ -27,7 +27,7 @@ let package = Package(
     .package(url: "https://github.com/Macro-swift/MacroExpress.git",
              from: "1.0.26"),
     .package(url: "https://github.com/Macro-swift/MacroLambda.git",
-             from: "0.6.0"),
+             from: "0.6.1"),
     .package(url: "https://github.com/AlwaysRightInstitute/cows",
              from: "1.0.10")
   ],
