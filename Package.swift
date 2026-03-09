@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:6.0
 
 import PackageDescription
 
@@ -56,5 +56,6 @@ let package = Package(
                       dependencies: [ "MacroLambda", "cows" ],
                       exclude: [ "README.md" ],
                       resources: [ .copy("public"), .copy("views") ])
-  ]
+  ],
+  swiftLanguageModes: [ .v5 ]
 )
